@@ -1,0 +1,11 @@
+/backend/node_modules
+/backend/.env
+/node_modules
+/react-learning/node_modules
+/react-learning/.env
+
+
+# some unwanted files
+
+/react-learning/file_sharing.py
+/delete

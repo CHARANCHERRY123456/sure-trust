@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.loginContainer{
+  font-family: Arial, sans-serif;
+  background-color: black; /* Full body background set to black */
+  height: 100vh;
+}
+
+.loginHeaderContainer{
+  background-color: purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* Header remains white */
+  padding: 1.5vh 2.5vw; /* Increased padding for a bigger header */
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  border-bottom-left-radius: 0.5vw; /* Reduced corner radius */
+  border-bottom-right-radius: 0.5vw; /* Reduced corner radius */
+
+}
+
+.loginLogoContainer{
+  display: flex;
+  align-items: center;
+  margin-left: 1vw;
+
+}
+
+.logo{
+  height: 5vh; /* Increased height for the LinkedIn logo */
+  margin-right: 2vw;
+}
+
+.loginHeaderIconsContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10vw; 
+}
+
+.singleIconContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2.5vw; /* Increased spacing between icons */
+  color: black;
+  font-size: 1vh;
+}
+
+.singleIconImage{
+
+  font-size: 1vh; /* Increased icon size */
+  margin-bottom: 0vh;
+  height:4vh;
+}
+
+.iconName{
+  font-size: 2vh; /* Increased font size for text below icons */
+  text-align: center;
+}
+.loginSearchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color:rgb(238, 237, 237);  /* Light background color */
+  border-radius: 5px;  /* Slightly rounded corners */
+  width: 30vw;  /* Width to match LinkedIn style */
+  height: 5vh;  /* Adjusted height */
+  padding: 0 10px; 
+  border:gainsboro solid 1.5px; /* Inner padding for better alignment */
+}
+
+.SearchBarInput {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 2.5vh;
+  padding-left: 10px;
+  outline: none;
+}
+
+.SearchIcon {
+  position: absolute;
+  right: 10px;
+  height: 2vh;  /* Icon size */
+  cursor: pointer;
+}

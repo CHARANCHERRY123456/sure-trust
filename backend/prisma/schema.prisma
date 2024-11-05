@@ -1,0 +1,44 @@
+// prisma/schema.prisma
+
+
+datasource db {
+  provider = "mysql"           
+  url      = process.env.DATABASE_URL
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id             Int      @id @default(autoincrement())
+  name           String
+  email          String   @unique
+  password       String @default("0")
+  currentJobId   Int?     @unique 
+  currentJob     Job?     @relation("CurrentJob", fields: [currentJobId], references: [id]) // Specify fields/references only here
+  applyingJobs   Job[]    @relation("ApplyingJobs") 
+  post           Post?    
+}
+
+model Job {
+  id             Int      @id @default(autoincrement())
+  title          String
+  salary         Int
+  location       String
+  currentJobUser User?    @relation("CurrentJob")
+  applyingUsers  User[]   @relation("ApplyingJobs")
+  post           Post?    
+}
+
+model Post {
+  id             Int      @id @default(autoincrement())
+  title          String
+  description    String
+  jobId          Int?     @unique 
+  userId         Int?     @unique 
+  job            Job?     @relation(fields: [jobId], references: [id])
+  user           User?    @relation(fields: [userId], references: [id])
+}
+
+

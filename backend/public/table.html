@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr{
+            border: 1px solid black;
+            width: 10px;
+            height: 10px;
+        }
+        td{
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" value="3" placeholder="row" id="row" name="row">
+    <input type="number" value="4" placeholder="columns" id="col" name="col">
+    <button onclick="create_table()" >Create Table</button>
+    <div class="res" id="res">
+        <table id="res_table" style="width: 100px;height: 100px;">
+            <tr style="border: 1px;"></tr>
+        </table>
+
+    </div>
+
+    <script>
+        function create_table(){
+            const row = document.getElementById("col").value;
+            const col = document.getElementById("row").value;
+            const table  = document.getElementById("res_table");
+            table.innerHTML = ""
+            for(let i =0;i < row;i++){
+                const tr = document.createElement("tr");
+                for(let j =0;j<col;j++){
+                    const td = document.createElement("td");
+                    tr.append(td);
+                }
+                tr.setAttribute("style" , "border : 1px")
+                table.append(tr)
+            }
+            console.log(table);
+            return table
+            const res = document.getElementById("res");
+            res.append(table);
+        }
+    </script>
+
+
+</body>
+
+
+
+</html>
